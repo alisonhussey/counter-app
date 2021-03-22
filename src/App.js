@@ -2,7 +2,7 @@ import NavBar from "./components/navbar";
 import Counters from "./components/counters";
 import "./App.css";
 import React, { Component } from "react";
-import { render } from "react-dom";
+// import { render } from "react-dom";
 
 class App extends Component {
   state = {
@@ -13,6 +13,15 @@ class App extends Component {
       { id: 4, value: 0 },
     ],
   };
+
+  constructor() {
+    super();
+    console.log("App - Constructor");
+  }
+
+  componentDidMount() {
+    console.log("App Mounted");
+  }
 
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
@@ -35,6 +44,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App rendered");
     return (
       <React.Fragment>
         <NavBar
